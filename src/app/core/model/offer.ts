@@ -11,13 +11,28 @@ export class Offer {
     public _comunity: Comunity;
     public _visibility: string;
     public _level: string;
-
+    private _location: any;
 
     constructor() {
     }
 
 
+/**
+     * Getter location
+     * @return {any}
+     */
+	public get location(): any {
+		return this._location;
+	}
 
+    /**
+     * Setter location
+     * @param {any} value
+     */
+	public set location(value: any) {
+		this._location = value;
+	}
+    
 
     /**
      * Getter id

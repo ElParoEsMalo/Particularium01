@@ -32,47 +32,53 @@
 
 
   <ion-card>
-    <ion-item >
-      <ion-label position="floting">Asignature: </ion-label >
-      <ion-input class="size" type="text" [(ngModel)]="demanda.subject" aria-placeholder=""> </ion-input>
-      </ion-item>
     <ion-item>
-      <ion-label position="floting">Nevel: </ion-label>
-      <ion-input class="size" type="text" [(ngModel)]="demanda.level" aria-placeholder=""> </ion-input>
+      <ion-label position="floting">Asignature: </ion-label>
+      <select class="size" name="subject" [(ngModel)]="demanda.subject">
+        <option *ngFor="let subject of arraySubject"> {{subject}}
+        </option>
+      </select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floting">Level: </ion-label>
+      <select class="size" name="level" [(ngModel)]="demanda.level">
+        <option *ngFor="let level of arrayLevel"> {{level}}
+        </option>
+      </select>
     </ion-item>
     <ion-item>
       <ion-label position="floting">Title: </ion-label>
-      <ion-input class="size" type="text" [(ngModel)]="demanda.title" aria-placeholder=""> </ion-input>
+      <ion-input class="size" type="text" [(ngModel)]="demanda.title" aria-valuetext=" "> </ion-input>
     </ion-item>
   </ion-card>
 
 
   <ion-card>
     <ion-item>
-    
-  
+
+
       <ion-label position="floting">Comunity: </ion-label>
       <select class="size" name="comunity" [(ngModel)]="demanda.comunity">
-              <option *ngFor="let comunity of arrayCom"> {{comunity}}
+        <option *ngFor="let comunity of arrayCom"> {{comunity}}
         </option>
       </select>
-      
+
     </ion-item>
     <ion-item>
       <ion-label position="floting">Mobility: </ion-label>
       <select class="size" name="mobility" [(ngModel)]="demanda.mobility">
-              <option *ngFor="let mobility of arrayMob"> {{mobility}}
+        <option *ngFor="let mobility of arrayMob"> {{mobility}}
         </option>
       </select>
     </ion-item>
     <ion-item>
       <ion-label position="floting">Schedule: </ion-label>
       <select class="size" name="schedule" [(ngModel)]="demanda.schedule">
-              <option *ngFor="let schedule of arraySche"> {{schedule}}
+        <option *ngFor="let schedule of arraySche"> {{schedule}}
         </option>
       </select>
     </ion-item>
-    
+
   </ion-card>
   <ion-grid>
     <ion-row>

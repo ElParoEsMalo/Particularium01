@@ -1,3 +1,5 @@
+import { element } from 'protractor';
+import { User } from 'src/app/core/model/user';
 import { Offer } from './../../core/model/offer';
 import { Filtro } from './../../core/control/filtro';
 import { Demand } from './../../core/model/demand';
@@ -22,6 +24,7 @@ export class DemandOfferService implements Createable {
   private _todasDemanda: Demand[] = [];
 
   constructor(private afStore: DataService, private routesv: Router, private afAuth: AuthService, ) {
+    this.getTodasOfertas();
   }
 
   async generateOfferWithId(oferta: Offer) {
@@ -94,7 +97,7 @@ export class DemandOfferService implements Createable {
       }
     });
     this.ofertasEncontradas = new Filtro().filtrar(this.todasOfertas, demanda);
-    
+
     this.routesv.navigateByUrl('/buscador-oferta');
   }
 
@@ -145,6 +148,31 @@ export class DemandOfferService implements Createable {
   DeleteDemanda(id: string) {
     this.afStore.deleteDemanda(id);
     this.routesv.navigateByUrl('/menu');
+  }
+
+  async GetSubject() {
+    await this.getTodasOfertas().then((data: Offer[]) => {
+      for (let index = 0; index < data.length; index++) {
+        this.todasOfertas.push(data[index]);
+      }
+    });
+    var subject = [];
+    this.todasOfertas.forEach(element => {
+      subject.push(element._subject);
+    })
+    return subject;
+  }
+  async GetLevel() {
+    await this.getTodasOfertas().then((data: Offer[]) => {
+      for (let index = 0; index < data.length; index++) {
+        this.todasOfertas.push(data[index]);
+      }
+    });
+    var subject = [];
+    this.todasOfertas.forEach(element => {
+      subject.push(element._level);
+    })
+    return subject;
   }
 
   /**
