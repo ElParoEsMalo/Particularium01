@@ -1,3 +1,4 @@
+import { LoginServiceService } from 'src/app/servicios/login/login-service.service';
 import { Student } from './../../core/model/student';
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase/app'
@@ -29,7 +30,7 @@ export class ProfileStudentPage implements OnInit {
   marcadores = [[38.6762376, -6.4183559], [38.6730116, -6.4183819], [38.6740926, -6.4183829], [38.6750836, -6.4183839]];
 
 
-  constructor(private signUp: SingUpServiceService) {
+  constructor(private signUp: SingUpServiceService, private logOut: LoginServiceService) {
   }
 
   ngOnInit() {
@@ -38,10 +39,13 @@ export class ProfileStudentPage implements OnInit {
   save() {
     this.signUp.addStudent(this.student);
   }
-  //Mapa
 
+  logout() {
+    this.logOut.logout();
+  }
+  
   ionViewDidEnter() {
-    this.geomap = new Map("myMapStudent");
+    this.geomap = new Map('myMapStudent');
     let searchControl = geosearch().addTo(this.geomap);
     this.showMap();
   }
@@ -60,12 +64,12 @@ export class ProfileStudentPage implements OnInit {
       console.log(this.student.location);
       if (this.student.location != undefined) {
         this.geomap.remove();
-        this.geomap = new Map("myMap");
+        this.geomap = new Map("myMapStudent");
         this.showMap();
       }
       this.student.location = new firebase.firestore.GeoPoint(e.latlng.lat, e.latlng.lng);
       alert(e.latlng);
-      marker(e.latlng, { icon: this.profesorIcon }, 15).addTo(this.geomap)
+      marker(e.latlng, { icon: this.userIcon }, 15).addTo(this.geomap)
         .bindPopup('Hey, I\'m Here');
     }, this);
   }

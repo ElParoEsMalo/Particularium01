@@ -4,7 +4,7 @@ import { User } from 'src/app/core/model/user';
 import { Student } from 'src/app/core/model/student';
 
 
-export class AuthServiceMock implements Authable{
+export class AuthServiceMock{
 
     private activeUser : User;
     private users : User[];

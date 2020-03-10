@@ -1,19 +1,64 @@
 <ion-header>
   <ion-toolbar class="encabezado">
     <ion-grid>
-      <ion-row>
-        <ion-button class="iconoAtras" routerLink='/sign-up'>
-          <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
-        </ion-button>
-        <ion-title class="encabezado"> ¿Qué tipo de usuario eres? </ion-title>
+      <ion-row size="12">
+        <ion-col size="3" class="columnaSize">
+          <ion-button (click)='logout()'>
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="9" class="columnaSize">
+          <ion-text >
+            <h3 >¿Qué tipo de usuario eres?</h3>
+         
+            
+          </ion-text>
+        </ion-col>
+
       </ion-row>
     </ion-grid>
+
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
-  <ion-button color="#fff47e" class="buttonTeacher" (click)="addTeacher()">Teacher <img class="imagenTipoUser" src="assets/imgs/teacher.png">
-  </ion-button>
-  <ion-button color="#fff47e" class="buttonStudent" (click)="addStudent()">Student <img class="imagenTipoUser" src="assets/imgs/student.png">
+<ion-content class="home">
 
-  </ion-button>
+
+
+  <ion-grid>
+
+   
+    <ion-row>
+      <ion-col>
+        <ion-button color="#fff47e" class="buttonTipoUser" (click)="addTeacher()">
+          <img class="imagenTipoUser" src="assets/imgs/teacher.png">
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="filaStyle">
+      <ion-col class="columnaStyle">
+        <ion-text>
+          <h2>TEACHER</h2>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+   
+    <ion-row>
+      <ion-col>
+        <ion-button color="#fff47e" class="buttonTipoUser" (click)="addStudent()">
+          <img class="imagenTipoUser" src="assets/imgs/student.png">
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+    <ion-row class="filaStyle">
+      <ion-col class="columnaStyle">
+        <ion-text>
+          <h2>STUDENT</h2>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
 </ion-content>

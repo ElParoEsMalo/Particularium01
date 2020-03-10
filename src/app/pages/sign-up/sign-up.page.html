@@ -2,22 +2,27 @@
 <ion-header>
  
   <ion-toolbar class="encabezado"> 
+   
     <ion-grid>
-     
-      <ion-row>
-        <ion-button class="iconoAtras" routerLink='/home'>  <ion-icon  ios="ios-arrow-back" md="md-arrow-back"></ion-icon></ion-button> 
-       
-       
-        <ion-col>
-         
-          <img class="imagenSignUp"  src="assets/imgs/registro.png" > 
-          <ion-title class="encabezado">   SIGNUP </ion-title>
+
+      <ion-row size="12">
+        <ion-col size="4" class="columnaSize">
+          <ion-button routerLink='/home'>
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+          </ion-button>
         </ion-col>
-       
+        <ion-col size="4" class="columnaSize">
+          <ion-text>
+            <h3>SIGNUP</h3>
+          </ion-text>
+        </ion-col>
+        <ion-col size="4" class="columnaSize">
+          <ion-text>
+            <img class="imagen" src="assets/imgs/registro.png">
+          </ion-text>
+        </ion-col>
       </ion-row>
-      
     </ion-grid>
-    
    
   </ion-toolbar>
 </ion-header>

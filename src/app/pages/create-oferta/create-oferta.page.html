@@ -1,0 +1,83 @@
+<ion-header>
+
+  <ion-toolbar class="encabezado">
+
+    <ion-grid>
+
+      <ion-row size="12">
+        <ion-col size="4" class="columnaSize">
+          <ion-button routerLink='/menu'>
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="4" class="columnaSize">
+          <ion-text>
+            <h3>CREATE OFFER</h3>
+          </ion-text>
+        </ion-col>
+        <ion-col size="4" class="columnaSize">
+          <ion-text>
+            <img class="imagen" src="assets/imgs/oferta.png">
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home">
+
+
+  <ion-card>
+    <ion-item>
+      <ion-label position="floting">Asignature: </ion-label>
+      <ion-input class="size" type="text" [(ngModel)]="oferta.subject" aria-placeholder=""> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floting">Level: </ion-label>
+      <ion-input class="size" type="text" [(ngModel)]="oferta.level" aria-placeholder=""> </ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-label position="floting">Comunity: </ion-label>
+      <select class="size" name="comunity" [(ngModel)]="oferta.comunity">
+        <option *ngFor="let comunity of arrayCom"> {{comunity}}
+        </option>
+      </select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floting">Mobility: </ion-label>
+      <select class="size" name="mobility" [(ngModel)]="oferta.mobility">
+        <option *ngFor="let mobility of arrayMob"> {{mobility}}
+        </option>
+      </select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floting">Schedule: </ion-label>
+      <select class="size" name="schedule" [(ngModel)]="oferta.schedule">
+        <option *ngFor="let schedule of arraySche"> {{schedule}}
+        </option>
+      </select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floting">Visibiliy: </ion-label>
+      <ion-checkbox class="size" checked="true" [(ngModel)]="oferta.visibility"></ion-checkbox>
+    </ion-item>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="#3b5999" class="buttonAceptar" (click)="save()">Save</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="#3b5999" class="buttonCancel" (click)="cancel()">Cancel</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

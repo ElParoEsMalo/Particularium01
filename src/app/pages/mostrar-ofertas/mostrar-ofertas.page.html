@@ -1,0 +1,58 @@
+<ion-header>
+
+  <ion-toolbar class="encabezado">
+
+    <ion-grid>
+
+      <ion-row size="12">
+        <ion-col size="4" class="columnaSize">
+          <ion-button (click)="logout()">
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="4" class="columnaSize">
+          <ion-text>
+            <h3>OFFER MENU</h3>
+          </ion-text>
+        </ion-col>
+        <ion-col size="4" class="columnaSize">
+          <ion-text>
+            <img class="imagen" src="assets/imgs/menu.png">
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="home">
+
+  <ion-card class="cardStyle" *ngFor="let oferta of ofertas">
+    <ion-item>
+      <ion-icon name="browsers"></ion-icon>
+      <ion-label>{{oferta._subject}}</ion-label>
+      <ion-button (click)="delete(oferta.id)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+      <!--<ion-button routerLink='/create-oferta'>
+        <ion-icon name="create"> </ion-icon>
+      </ion-button>-->
+    </ion-item>
+    <ion-card-content>
+      Nivel: {{oferta._level}}
+    </ion-card-content>
+    <ion-card-content>
+      Comunity: {{oferta._comunity}}
+    </ion-card-content>
+    <ion-card-content>
+      Mobility: {{oferta._mobility}}
+    </ion-card-content>
+    <ion-card-content>
+      Schedule: {{oferta._schedule}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -2,55 +2,68 @@
 <ion-header>
  
   <ion-toolbar class="encabezado"> 
+  
     <ion-grid>
-     
-      <ion-row>
-        <ion-button class="iconoAtras" routerLink='/home'>  <ion-icon  ios="ios-arrow-back" md="md-arrow-back"></ion-icon></ion-button> 
-        <ion-col size="10">
-         
-          <img class="imagenLogin"  src="assets/imgs/iniciarSesion.png" > 
-          <ion-title class="encabezado">   LOGIN </ion-title>
+
+      <ion-row size="12">
+        <ion-col size="4" class="columnaSize">
+          <ion-button routerLink='/home'>
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+          </ion-button>
         </ion-col>
-       
+        <ion-col size="4" class="columnaSize">
+          <ion-text>
+            <h3>LOGIN</h3>
+          </ion-text>
+        </ion-col>
+        <ion-col size="4" class="columnaSize">
+          <ion-text>
+            <img class="imagen" src="assets/imgs/iniciarSesion.png">
+          </ion-text>
+        </ion-col>
       </ion-row>
-      
     </ion-grid>
+
     
    
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="home">
-  <ion-grid>
 
-    <ion-row size="6">
+
+  <ion-grid>
+   
+    <ion-row>
       <ion-col>
         <ion-item class="camposFormulario">
           <ion-label position="floting">Username: </ion-label>
           <ion-input type="text" [(ngModel)]="userReg.email"> </ion-input>
         </ion-item>
       </ion-col>
-
-
     </ion-row>
-    <ion-row size="6">
-
+    <ion-row>
       <ion-col>
         <ion-item class="camposFormulario">
           <ion-label position="floting">Password: </ion-label>
           <ion-input type="password" [(ngModel)]="userReg.password"></ion-input>
         </ion-item>
-</ion-col>       
-</ion-row>
-
-<ion-row size="6">
-
-  <ion-col>
-    <ion-footer class="footer">¿Has olvidado la contraseña?</ion-footer>
-    <ion-button color="#3b5999" class="buttonLogin" (click)="login()">Login</ion-button>
-</ion-col>       
-</ion-row>
-</ion-grid>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="olvidarContraseña">
+        <ion-text>
+          <h5>¿Has olvidado la contraseña?</h5>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button color="#3b5999" class="buttonLogin" (click)="login()">Login</ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
 
 
 </ion-content>

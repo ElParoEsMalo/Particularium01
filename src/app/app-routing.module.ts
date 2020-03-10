@@ -29,14 +29,58 @@ const routes: Routes = [
     path: 'profileTeacher',
     loadChildren: () => import('./pages/profileTeacher/profileTeacher.module').then( m => m.ProfileTeacherPageModule)
   },
+  {
+    path: 'menu',
+    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'create-oferta',
+    loadChildren: () => import('./pages/create-oferta/create-oferta.module').then( m => m.CreateOfertaPageModule)
+  },
+  {
+    path: 'create-demanda',
+    loadChildren: () => import('./pages/create-demanda/create-demanda.module').then( m => m.CreateDemandaPageModule)
+  },
+  {
+    path: 'menu-demanda',
+    loadChildren: () => import('./pages/menu-demanda/menu-demanda.module').then( m => m.MenuDemandaPageModule)
+  },
+  {
+    path: 'mostrar-demandas',
+    loadChildren: () => import('./pages/mostrar-demandas/mostrar-demandas.module').then( m => m.MostrarDemandasPageModule)
+  },
+  {
+    path: 'mostrar-ofertas',
+    loadChildren: () => import('./pages/mostrar-ofertas/mostrar-ofertas.module').then( m => m.MostrarOfertasPageModule)
+  },
+  {
+    path: 'buscador-oferta',
+    loadChildren: () => import('./pages/buscador-oferta/buscador-oferta.module').then( m => m.BuscadorOfertaPageModule)
+  },
+  {
+    path: 'edit-profile-teacher',
+    loadChildren: () => import('./pages/edit-profile-teacher/edit-profile-teacher.module').then( m => m.EditProfileTeacherPageModule)
+  },
+  {
+    path: 'edit-profile-student',
+    loadChildren: () => import('./pages/edit-profile-student/edit-profile-student.module').then( m => m.EditProfileStudentPageModule)
+  },
 
   
-  
+
+
+
+
+
+
+
+
+
   ];
-  
+
   @NgModule({
 	imports: [
-	  RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
 	],
 	exports: [RouterModule]
   })

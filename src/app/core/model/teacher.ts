@@ -2,42 +2,27 @@ import { User } from './user';
 import { Offer } from './offer';
 
 export class Teacher extends User {
-    private phone: string;
-    private offers: Array<Offer>;
-    
+    private _phone: string;
+
     constructor() {
         super();
     }
+
     /**
-     * Getter $phone
+     * Getter phone
      * @return {string}
      */
-    public get $phone(): string {
-        return this.phone;
-    }
+	public get phone(): string {
+		return this._phone;
+	}
 
     /**
-     * Getter $offers
-     * @return {Array<Offer>}
-     */
-    public get $offers(): Array<Offer> {
-        return this.offers;
-    }
-
-    /**
-     * Setter $phone
+     * Setter phone
      * @param {string} value
      */
-    public set $phone(value: string) {
-        this.phone = value;
-    }
+	public set phone(value: string) {
+		this._phone = value;
+	}
 
-    /**
-     * Setter $offers
-     * @param {Array<Offer>} value
-     */
-    public set $offers(value: Array<Offer>) {
-        this.offers = value;
-    }
 
 }

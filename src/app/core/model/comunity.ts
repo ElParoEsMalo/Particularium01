@@ -1,3 +1,3 @@
 export enum Comunity {
-    IGNORE, GROUP, INDIVIDUAL
+    'IGNORE', 'GROUP', 'INDIVIDUAL'
 }

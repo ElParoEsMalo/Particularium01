@@ -9,13 +9,17 @@ export class FilterMock implements Filtrable {
     private offers: Offer[] = new Array();
 
     constructor() {
-        this.offers.push(new Offer(1, "Bio", Schedule.MORNING, Mobility.OWN_LOCAL, Comunity.GROUP, "visible", "second grade"));
+        this.offers.push(new Offer());
     }
 
     filtrar(todasOfertas: import("../core/model/offer").Offer[], demandaBuscada: import("../core/model/demand").Demand): Offer[] {
-        var ofertasFiltradas: Offer[]=new Array();
+        var ofertasFiltradas: Offer[] = new Array();
         todasOfertas.forEach(oferta => {
-            if (oferta.$subject === demandaBuscada.$subject || oferta.$level === demandaBuscada.$level || oferta.$schedule === demandaBuscada.$schedule || oferta.$community === demandaBuscada.$community || oferta.$mobility === demandaBuscada.$mobility) {
+            if (oferta.subject === demandaBuscada.subject ||
+                oferta.level === demandaBuscada.level ||
+                oferta.schedule === demandaBuscada.schedule ||
+                oferta.comunity === demandaBuscada.comunity
+                || oferta.mobility === demandaBuscada.mobility) {
                 ofertasFiltradas.push(oferta);
             }
         });

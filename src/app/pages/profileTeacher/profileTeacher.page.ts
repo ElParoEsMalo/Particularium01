@@ -5,6 +5,7 @@ import { SingUpServiceService } from 'src/app/servicios/singUp/sing-up-service.s
 import { Map, tileLayer, marker, icon } from 'leaflet';
 import 'esri-leaflet';
 import { geosearch } from 'esri-leaflet-geocoder';//"esri-leaflet-geocoder"
+import { LoginServiceService } from 'src/app/servicios/login/login-service.service';
 
 @Component({
   selector: 'app-profileTeacher',
@@ -30,7 +31,7 @@ export class ProfileTeacherPage implements OnInit {
   marcadores = [[38.6762376, -6.4183559], [38.6730116, -6.4183819], [38.6740926, -6.4183829], [38.6750836, -6.4183839]];
 
 
-  constructor(private signUp: SingUpServiceService) {
+  constructor(private signUp: SingUpServiceService, private logOut: LoginServiceService) {
   }
 
   ngOnInit() {
@@ -78,5 +79,8 @@ export class ProfileTeacherPage implements OnInit {
   }
   getMarker(e) {
     console.log(e.latLng);
+  }
+  logout() {
+    this.logOut.logout();
   }
 }

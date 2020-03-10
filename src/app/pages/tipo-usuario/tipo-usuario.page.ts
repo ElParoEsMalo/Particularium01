@@ -1,3 +1,4 @@
+import { LoginServiceService } from 'src/app/servicios/login/login-service.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/core/model/user';
 import { SingUpServiceService } from 'src/app/servicios/singUp/sing-up-service.service';
@@ -9,7 +10,7 @@ import { SingUpServiceService } from 'src/app/servicios/singUp/sing-up-service.s
 })
 export class TipoUsuarioPage implements OnInit {
 
-  constructor(private sigServ: SingUpServiceService) { }
+  constructor(private sigServ: SingUpServiceService, private logOut: LoginServiceService) { }
 
   ngOnInit() {
   }
@@ -20,6 +21,9 @@ export class TipoUsuarioPage implements OnInit {
   }
   addTeacher(){
     this.sigServ.addTeacherId();
+  }
+  logout(){
+    this.logOut.logout();
   }
 
 }

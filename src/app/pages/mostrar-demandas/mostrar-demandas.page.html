@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar class="encabezado">
+    <ion-grid>
+      <ion-row size="12">
+        <ion-col size="4" class="columnaSize">
+          <ion-button (click)="logout()">
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="4" class="columnaSize">
+          <ion-text>
+            <h3>DEMAND MENU</h3>
+          </ion-text>
+        </ion-col>
+        <ion-col size="4" class="columnaSize">
+          <ion-text>
+            <img class="imagen" src="assets/imgs/menu.png">
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="home">
+  <div *ngFor="let demanda of demandas">
+    <ion-card class="cardStyle">
+      <ion-item>
+        <ion-icon name="browsers"></ion-icon>
+        <ion-label>{{demanda._title}}</ion-label>
+        <ion-button (click)="delete(demanda.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+        <!--<ion-button routerLink='/create-demanda'>
+          <ion-icon name="create"> </ion-icon>
+        </ion-button>-->
+      </ion-item>
+      <div (click)="mostrarDemandas(demanda)">
+        <ion-card-content>
+          Nivel: {{demanda._level}}
+        </ion-card-content>
+        <ion-card-content>
+          Comunity: {{demanda._comunity}}
+        </ion-card-content>
+        <ion-card-content>
+          Mobility: {{demanda._mobility}}
+        </ion-card-content>
+        <ion-card-content>
+          Schedule: {{demanda._schedule}}
+        </ion-card-content>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
